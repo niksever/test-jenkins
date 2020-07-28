@@ -1,0 +1,23 @@
+#!groovy
+//test pipeline
+
+pipeline {
+    agent {
+        label "master"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        
+        stage('My stage Hello') {
+            steps {
+                echo 'My Hello World'
+            }
+        }
+    }
+}
