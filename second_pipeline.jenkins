@@ -14,9 +14,9 @@ pipeline {
         }
         
         
-        stage('User name') {
+        stage('OS version') {
             steps {
-                sh 'ssh mseveryn@dnserver \'whoami\''
+                sh 'ssh mseveryn@dnserver \'lsb_release -a\''
             }
         }
     }
