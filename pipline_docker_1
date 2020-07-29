@@ -1,0 +1,27 @@
+#!groovy
+//test pipeline with docker
+
+pipeline {
+    agent {
+        label "master"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello!'
+            }
+        }
+        
+        
+        stage('Create docker image') {
+            steps {
+                echo '---=====Start building docker image=====---'
+                dir ('docker') {
+                    sh 'docker build .'
+                }
+                
+            }
+        }
+    }
+}
