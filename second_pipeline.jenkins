@@ -1,0 +1,23 @@
+
+#!groovy
+//test pipeline 2
+
+pipeline {
+    agent {
+        label "master"
+        }
+
+    stages {
+        stage('Use ssh') {
+            steps {
+                echo 'Hello server!'
+            }
+        }
+        
+        
+        stage('User name') {
+            steps {
+                sh 'ssh mseveryn@dnserver \'whoami\''
+            }
+        }
+    }
